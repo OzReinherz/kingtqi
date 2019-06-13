@@ -19,37 +19,6 @@ client.on("ready", () => {
   client.user.setActivity(`Digimon Adventure`);
 });
 
-
-client.on('message', message => {
-    if (message.content === '+Show_1') {
-    	message.channel.send('@here\n```Para reportar os erros será nesse canal. Segue as instruções de como pode ajudar!```\n\n-Mande um print com a imagem do erro.\n-Caso queira especifique onde está o erro em texto (mesmo assim, imagem necessária)\n-Sora, não converse neste canal.');
-  	}
-});
-
-client.on('message', message => {
-if (message.content === '+Close_Eye') {
-message.channel.send({
-  files: [{
-    attachment: 'https://i.imgur.com/PhHK4Pd.gif',
-    name: 'PhHK4Pd.gif'
-  }]
-})
-.then(console.log)
-.catch(console.error);
-}  
-else if (message.content === '+Dance_Suba') {
-message.channel.send({
-  files: [{
-    attachment: 'https://i.imgur.com/qLB5e3i.gif',
-    name: 'qLB5e3i.gif'
-  }]
-})
-.then(console.log)
-.catch(console.error);
-}
-});
-
-
 client.on("message", async message => {
   // This event will run on every single message received, from any channel or DM.
   
@@ -152,31 +121,18 @@ client.on("message", async message => {
   }
 });
 
+
 client.on('guildMemberAdd', member => {
-    member.guild.channels.get('386897048227807247').send('**' + member.user.username + '**, entrou no servidor!'); 
+    member.guild.channels.get('438132161019772928').send('**' + member.user.username + '**, entrou no servidor!'); 
 });
 
 client.on('guildMemberRemove', member => {
-    member.guild.channels.get('386897048227807247').send('**' + member.user.username + '**, saiu do servidor');
-    //
-});
-
-
-client.on('guildMemberAdd', member => {
-    member.guild.channels.get('493492689447419925').send('**' + member.user.username + '**, entrou no servidor!'); 
-});
-
-client.on('guildMemberRemove', member => {
-    member.guild.channels.get('493492689447419925').send('**' + member.user.username + '**, saiu do servidor!');
+    member.guild.channels.get('438132161019772928').send('**' + member.user.username + '**, saiu do servidor!');
     //
 });
 
 client.on('guildMemberAdd', member => {
-    member.guild.channels.get('493492689447419925').send("'**' + member.user.username + '**, Bem Vindo!"); 
+    member.guild.channels.get('438132161019772928').send("'**' + member.user.username + '**, Bem Vindo!"); 
 });
 
-client.on('guildMemberAdd', member => {
-    member.guild.channels.get('386897048227807247').send("'**' + member.user.username + '**, Bem Vindo!"); 
-});
-
-client.login(config.token);
+client.login(process.env.TOKEN);
